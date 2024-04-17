@@ -1,6 +1,7 @@
 /* eslint-disable react-hooks/rules-of-hooks */
 /* eslint-disable react/prop-types */
 /* eslint-disable no-unused-vars */
+
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
@@ -23,22 +24,21 @@ const AddJobPage = ({ addJobSubmit }) => {
 
         const newJob = {
             title,
-            type, 
-            location, 
-            description, 
-            salary, 
+            type,
+            location,
+            description,
+            salary,
             company: {
-                name: companyName, 
+                name: companyName,
                 description: companyDescription,
-                contactEmail: contactEmail, 
+                contactEmail: contactEmail,
                 contactPhone: contactPhone
             },
         }
 
         addJobSubmit(newJob);
-
         toast.success('Job Added Successfully');
-
+        
         return navigate('/jobs')
     }
 
